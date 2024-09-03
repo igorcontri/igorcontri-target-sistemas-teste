@@ -12,18 +12,13 @@ b) Podem existir dias sem faturamento, como nos finais de semana e feriados. Est
 
 #  ============================= IMPORTANTE ============================= 
 
-# ESSE EXERCÍCIO DÁ A ENTENDER QUE HÁ UM ARQUIVO JSON/XML DISPONÍVEL COM DADOS DE FATURAMENTO
-# PORÉM NÃO ENCONTREI NENHUM ARQUIVO DISPONÍVEL NO SITE EM QUE REALIZEI O TESTE (GUPY)
 
-# DE FORMA A PRIORIZAR A LÓGICA, CRIEI MANUALMENTE UM ARQUIVO JSON, SIMULANDO O FATURAMENTO DIÁRIO DA EMPRESA
-# CONSIDERANDO FINAIS DE SEMANA E POSSÍVEIS FERIADOS (Que o exercício indica para serem ignorados).
-
-# ======================================================================= 
+# =======================================================================
 
 import json
 
 def calcular_faturamento(json_data):
-    faturamento = json_data["faturamento_diario"]
+    faturamento = json_data
 
     faturamento_validos = [dia["valor"] for dia in faturamento if dia["valor"] > 0]
 
@@ -36,7 +31,7 @@ def calcular_faturamento(json_data):
     
     return menor_faturamento, maior_faturamento, dias_acima_media
 
-with open("exercicio_03.json") as file:
+with open("dados.json") as file:
     json_data = json.load(file)
 
 menor, maior, dias_acima_media = calcular_faturamento(json_data)
