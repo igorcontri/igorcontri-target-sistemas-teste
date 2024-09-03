@@ -10,10 +10,7 @@ b) Podem existir dias sem faturamento, como nos finais de semana e feriados. Est
 
 """
 
-#  ============================= IMPORTANTE ============================= 
-
-
-# =======================================================================
+# NOTA: Recebi o arquivo "dados.json" após enviar o repositório na etapa de teste, estou atualizando com os dados propostos após o recebimento do e-mail.
 
 import json
 
